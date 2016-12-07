@@ -1,11 +1,16 @@
-var Airport = function() {
+var Airport = function(weather) {
   this.planes = [];
+  this._weather =  weather.isStormy ;
 };
 
 
 Airport.prototype.authoriseLanding = function(plane, landed_planes) {
-    plane.land();
-    return  this.planes.push(plane);
+    if(this._weather)
+      throw "Stormy! Can't land!";
+    else
+      plane.land();
+      return  this.planes.push(plane);
+
 };
 
 Airport.prototype.is_landed = function(plane) {

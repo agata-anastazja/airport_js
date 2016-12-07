@@ -21,4 +21,6 @@ describe('Plane',function(){
     expect(plane.isFlying).toEqual(false);
   });
 
+
+
 });
