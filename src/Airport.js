@@ -11,3 +11,7 @@ Airport.prototype.authoriseLanding = function(plane, landed_planes) {
 Airport.prototype.is_landed = function(plane) {
   return  this.planes.includes(plane);
 };
+
+Airport.prototype.authoriseTakeOff = function(plane, landed_planes) {
+  return  this.planes.shift(plane);
+};

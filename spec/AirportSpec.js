@@ -24,4 +24,11 @@ var plane;
     airport.authoriseLanding(plane);
     expect(airport.is_landed(plane)).toEqual(true);
   });
+
+  it('should authorise a take off', function(){
+    airport.authoriseLanding(plane);
+    airport.authoriseTakeOff(plane);
+    expect(airport.is_landed(plane)).toEqual(false);
+  });
+
 });
