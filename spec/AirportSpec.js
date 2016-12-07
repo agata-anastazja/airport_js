@@ -4,13 +4,13 @@ describe("Airport", function() {
 
 var airport;
 var plane;
-var weather = {isStormy: false};
+var weather; 
 
 
   beforeEach(function() {
     airport = new Airport(weather);
     plane = jasmine.createSpyObj('plane', ['land']);
-    // weather = jasmine.createSpyObj('weather', ['isStormy']);
+     weather = jasmine.createSpyObj('weather', ['isStormy']);
 
   });
 
@@ -24,14 +24,14 @@ var weather = {isStormy: false};
   });
 
   it("should authorise a plane to land", function() {
-    // spyOn(airport._weather, "isStormy").and.returnValue(false);
+    weather.isStormy.and.returnValue(false);
 
     airport.authoriseLanding(plane);
     expect(airport.is_landed(plane)).toEqual(true);
   });
 
   it('should authorise a take off', function(){
-    // spyOn(airport._weather, "isStormy").and.returnValue(false);
+    weather.isStormy.and.returnValue(false);
     airport.authoriseLanding(plane);
     airport.authoriseTakeOff(plane);
     expect(airport.is_landed(plane)).toEqual(false);
