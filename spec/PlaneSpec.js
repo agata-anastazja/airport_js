@@ -1,11 +1,16 @@
-describe('Plane', function() {
+'use strict';
+
+describe('Plane',function(){
 
   var plane;
+  var airport;
 
-  beforeEach(function() {
-
+  beforeEach(function(){
     plane = new Plane();
+    airport = jasmine.createSpyObj('airport',['clearForLanding']);
   });
+
+
 
   it('should test that by default plane flying', function() {
     expect(plane.isFlying).toEqual(true);
@@ -15,6 +20,5 @@ describe('Plane', function() {
     plane.land();
     expect(plane.isFlying).toEqual(false);
   });
-
 
 });

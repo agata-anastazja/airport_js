@@ -1,12 +1,13 @@
 var Airport = function() {
-  this.landed_planes = [];
+  this.planes = [];
 };
 
 
 Airport.prototype.authoriseLanding = function(plane, landed_planes) {
-  return  this.landed_planes.push(plane);
+    plane.land();
+    return  this.planes.push(plane);
 };
 
 Airport.prototype.is_landed = function(plane) {
-  return  this.landed_planes.includes(plane);
+  return  this.planes.includes(plane);
 };

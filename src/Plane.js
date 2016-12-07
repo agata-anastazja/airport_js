@@ -3,7 +3,7 @@ var Plane = function() {
 };
 
 
-Plane.prototype.land = function() {
-  return this.isFlying = false;
-
+Plane.prototype.land = function(airport){
+  
+  this.isFlying = false;
 };
